@@ -6,7 +6,7 @@ from .models import Item
 def Homepage(request):
 
 	if request.method == 'POST':
-		Name = request.POST['Name']
+		name = request.POST['name']
 		Essential = request.POST['Essential']
 		Quantity = request.POST['Quantity']
 		Address = request.POST['Address']
@@ -14,7 +14,7 @@ def Homepage(request):
 		
 		
 		mvg = Item()
-		mvg.Name =Name
+		mvg.name =name
 		mvg.Essential = Essential
 		mvg.Quantity = Quantity
 		mvg.Address = Address
@@ -25,6 +25,6 @@ def Homepage(request):
 
 def Page(request):
 
-	mvg = Item.objects.all().order_by('Name')
+	mvg = Item.objects.all().order_by('name')
 	return render(request,'ProjectPage.html', {'mvg': mvg})
 	
