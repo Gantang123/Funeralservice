@@ -1,0 +1,41 @@
+<html>
+<title>Essential Order Form</title>
+<body bgcolor= "gray">
+
+<h1 style="color:black; font-size:33px;"> <center><u>Essential Order Form</u></center> </h1>
+<center>
+
+<form class ="form" action="" method="post">
+  {% csrf_token %}
+<input bold type="text" id="Name" name="Name" placeholder= "Enter your Name"><br>
+</center>
+<center>
+<div id="Essential">
+  <p><b>Select your essential here</b></p>
+   <input type ="radio" id="Gloves1" name="Essential" value="Gloves">Gloves<br>
+   <input type ="radio" id="Alcohol2" name="Essential" value="Alcohol">Alcohol<br>
+   <input type ="radio" id="Facemask3" name="Essential" value="Facemask">Facemask<br>
+   <input type ="radio" id="Faceshield4" name="Essential" value="Faceshield">Faceshield<br>
+   <input type ="radio" id="SetofPPE5" name="Essential" value="Set of PPE">Set of PPE<br> 
+   <input type ="radio" id="Handsanitizer6" name="Essential" value="Hand sanitizer">Hand sanitizer<br><br>
+  </div>
+
+<center>
+	<input bold type="text" id="Quantity" name="Quantity" placeholder= "Quantity"><br>
+</center></br><center>
+<center><input bold type="text" id="Address" name="Address" placeholder= "Enter your Address"><br>
+</center>
+<div id="Payment">
+  <p><b>Mode of Payment</b></p>
+   <input type ="radio" id="CashonDelivery1" name="Payment" value="Cash on Delivery">Cash on Delivery<br>
+   <input type ="radio" id="OnlinePayment2" name="Payment" value="Online Payment">Online Payment<br>
+   <input type ="radio" id="Meetup3" name="Payment" value="Meet up">Meet up<br><br>
+	<button type="submit" name="done" onclick="myFunction()">Place Order</button>
+		<script>
+		function myFunction() {
+		  alert("Your order is being processed.");
+		}
+		</script>
+</form>
+</body>
+</html>

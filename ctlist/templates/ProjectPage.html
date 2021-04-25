@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Essential Order Form</title>
+</head>
+<style>
+table, td, th{
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+</style>
+<br>
+<body bgcolor= "gray">
+<h1 style="color:black; font-size:33px;"> <center><u>Essential Order Form</u></center> </h1>
+<table style="width:100%">
+  <tr>
+  	<th>{{ forloop.counter }}</th>
+    <th>Name</th>
+    <th>Essential Order</th>
+    <th>Quantity</th>
+    <th>Address</th>
+    <th>Mode of Payment</th>
+    </tr>
+
+<div class="mvg">
+	{% for mvg in mvg %}
+	<div class="mvg">
+
+    <tr>
+    <td>{{ forloop.counter }}</td>
+    <td>{{ mvg.Name }}</td>
+    <td>{{ mvg.Essential}}</td>
+    <td>{{ mvg.Quantity}}</td>
+    <td>{{ mvg.Address }}</td>
+    <td>{{ mvg.Payment }}</td>
+
+  </tr>
+
+
+</div>
+	{% endfor %}
+	</table>
+</body>
+</html>
+
