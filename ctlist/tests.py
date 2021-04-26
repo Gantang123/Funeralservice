@@ -114,3 +114,10 @@ class ORM2(TestCase):
 		self.assertEqual(Item3.Quantity, '3')
 		self.assertEqual(Item4.Address, 'Dasmarinas City')
 		self.assertEqual(Item5.Payment, 'Meet up')
+
+
+class Antique(TestCase):
+	def berniemylabs(self):
+		Item.objects.create(name='name', Essential='Essential',Quantity='Quantity', 
+		Address='Address', Payment='Payment')
+		response = self.client.get('/app/views.homepage.html/')
