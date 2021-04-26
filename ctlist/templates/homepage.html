@@ -1,12 +1,14 @@
 <html>
-    <title>Essential Order Form</title>
+  <head>
+    <title>Essential Order Form</title></head>
     <body bgcolor= "gray">
 
     <h1 style="color:black; font-size:33px;"> <center><u>Essential Order Form</u></center> </h1>
 <center>
 
-    <form class ="form" action="" method="post">
-    {% csrf_token %}
+<form class ="form" action="" method="post">
+  {% csrf_token %}
+
     <input bold type="text" id="name" name="name" placeholder="Enter your name"><br>
     </center>
     <center>
@@ -22,8 +24,9 @@
 
 <center>
 	         <input bold type="text" id="Quantity" name="Quantity" placeholder= "Quantity"><br>
-</center></br><center>
-<center><input bold type="text" id="Address" name="Address" placeholder= "Enter your Address"><br>
+</center><br><center>
+<center>
+          <input bold type="text" id="Address" name="Address" placeholder= "Enter your Address"><br>
 </center>
           <div id="Payment">
           <p id="pay"><b>Mode of Payment</b></p>
@@ -31,11 +34,7 @@
            <input type ="radio" id="OnlinePayment2" name="Payment" value="Online Payment">Online Payment<br>
            <input type ="radio" id="Meetup3" name="Payment" value="Meet up">Meet up<br><br>
         	<button type="submit" name="done" onclick="myFunction()">Place Order</button>
-<script>
-        		function myFunction() {
-        		  alert("Your order is being processed.");
-        		}
-</script>
+<script>function myFunction() {alert("Your order is being processed.");}</script>
 </form>
 </body>
 </html>

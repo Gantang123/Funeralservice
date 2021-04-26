@@ -25,7 +25,7 @@ class PageTest(unittest.TestCase):
 		#input
 		input1 = self.browser.find_element_by_id('name')  
 		self.assertEqual(input1.get_attribute('placeholder'),'Enter your name')
-		input2 = self.browser.find_element_by_id('name').send_keys("Mark Vincent N. Gantang")
+		input2 = self.browser.find_element_by_id('name').send_keys("Mark Gantang")
 		time.sleep(1)
 
 		#Paragraph
@@ -77,7 +77,7 @@ class PageTest(unittest.TestCase):
 
 		input1 = self.browser.find_element_by_id('name')  
 		self.assertEqual(input1.get_attribute('placeholder'),'Enter your name')
-		input2 = self.browser.find_element_by_id('name').send_keys("Mark Vincent N. Gantang")
+		input2 = self.browser.find_element_by_id('name').send_keys("Vincent N. Gantang")
 		time.sleep(1)
 
 		Select = self.browser.find_element_by_id('Gloves1').click()
