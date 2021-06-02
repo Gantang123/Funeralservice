@@ -1,0 +1,142 @@
+<html>
+<head>
+  <title>Funeral Services</title>
+  <body>
+<style>
+body { 
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #26262b;  
+}
+</style>
+</body>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<center>
+<body>
+    <h1 style="color:white">Welcome to Funeral Services</h1>
+    <h2 style="color:white">Send Flowers</h2>
+</center>
+    <hr>
+<h3 style="color:white">Funeral Flowers</h3>
+<p style="color:white">Name of reciever:&nbsp;&nbsp;&nbsp;
+  &nbsp;<input type="text" id="Name" name="Name" required/>
+  Please select your sex:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="male" name="sex" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="sex" value="female">
+  <label for="female">Female</label></p>
+  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="Contact" name="Contact" required/>
+  Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
+  <input type="text" id="Address" name="Address" required/></p>
+  <label for="birthday" style="color:white">Estimated Date</br>of Arrival:</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="date" id="birthday" name="birthday">&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a style="color:white">Relationship to the reciever:
+    <input type="text" id="Contact" name="Contact" required/>
+<form id="asd" action="">
+<p style="color:white"><b>Available Funeral flowers</b></p>
+ <p style="color:white">Product:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='product' id='product' required>
+      <option value="All white Standingnding sympathy">All white standing sympathy</option>
+      <option value="Always remember (WHITE STANDING)">Always remember (WHITE STANDING)</option>
+      <option value="Angelic All White Wreath">Angelic All White Wreath</option></p>
+      <option value="Care and Compassion Spray">Care and Compassion Spray</option></p>
+      <option value="Classic all Whites Standing Spray">Classic all Whites Standing Spray</option></p>
+      <option value="From your loving family">From your loving family</option></p>
+      <option value="Funeral White Basket">Funeral White Basket</option></p>
+    </select></br>
+<!-- https://www.flowersdeliverymanila.com/funeral-flowers/ -->
+    <br> Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" name="quantity" id='quantity' required></br>
+     <br> Size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='size' id='size'>
+      <option value="10 inches">10 inches</option>
+      <option value="15 inches">15 inches</option>
+      <option value="20 inches">20 inches</option>
+      <option value="25 inches">25 inches</option>
+      <option value="30 inches">30 inches</option>
+    </select>
+        <p style="color:white">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="totalCost"></span></p>
+    <h3 style="color:white">Billing form</h3>
+  <p style="color:white">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Name" name="Name" required/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Email" name="Email" required/>
+  <input type="checkbox" id="copy" name="copy" value="copy">
+  <label for="copy">Always send me updates.</label></p>
+  <p style="color:white">Permanent Address:<input type="text" id="Address2" name="Address2" required/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip code:<input type="text" id="zip" name="zip" required/></p>
+  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Number2" name="Number2" required/></p>
+  <label for="payment"style="color:white">Select your payment</br>availability:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <select name="payment" id="payment">
+    <option value="Annual">Annual</option>
+    <option value="Semi-Annual">Semi-Annual</option>
+    <option value="Quarterly">Quarterly</option>
+    <option value="Monthly">Monthly</option>
+  </select></br></br>
+  <label for="mode"style="color:white">Mode of Payment:&nbsp;&nbsp;&nbsp;</label>
+  <select name="mode" id="mode">
+    <option value="Savings accounts">Savings accounts</option>
+    <option value="Checking accounts.">Checking accounts.</option>
+    <option value="Salary account.">Salary account.</option>
+    <option value="Walk-in">Walk-in</option>
+  </select>
+    <form>
+<script>
+var productEl = document.querySelector('#product');
+var quantityEl = document.querySelector('#quantity');
+var sizeEl = document.querySelector('#size');
+var totalCostEl = document.querySelector('#totalCost');
+
+//Add the change event handlers on the applicable elements
+productEl.addEventListener('change', calculateTotal);
+quantityEl.addEventListener('change', calculateTotal);
+sizeEl.addEventListener('change', calculateTotal);
+
+//Store your data in an object literal (essentially creating a map)
+var product_price = {}; //Noticed I replaced the [] with {}
+product_price['All white standing sympathy'] = 120000;
+product_price['Always remember (WHITE STANDING)'] = 150000;
+product_price['Angelic All White Wreath'] = 150000;
+product_price['Care and Compassion Spray'] = 150000;
+product_price['Classic all Whites Standing Spray'] = 150000;
+product_price['From your loving family'] = 150000;
+product_price['Funeral White Basket'] = 150000;
+
+
+var size_price = {};   //Noticed I replaced the [] with {}
+size_price['10 inches'] = 15500;
+size_price['15 inches'] = 13800;
+size_price['20 inches'] = 22500;
+size_price['25 inches'] = 30250;
+size_price['30 inches'] = 12000;
+
+//Here's our single event handler - called when any of the 3 elements fire a 'change' event
+function calculateTotal() {
+  //console.log()
+  var unitCost = product_price[productEl.value];
+  var additionalCost = size_price[sizeEl.value] || 0;
+  var qty = quantityEl.value || 0;
+
+  totalCostEl.textContent = `${(unitCost * qty) + additionalCost}`;
+}
+</script>
+</div>
+<center>
+  <input type="submit" id="button" name="button" value="              Submit              "/><br>
+</center>
+</form>
+</body>
+</html>

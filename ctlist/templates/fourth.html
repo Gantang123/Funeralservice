@@ -1,0 +1,196 @@
+<html>
+<head>
+  <title>Funeral Services</title>
+  <body>
+<style>
+body { 
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #26262b;  
+}
+</style>
+</body>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<center>
+<body>
+    <h1 style="color:white">Welcome to Funeral Services</h1>
+    <h2 style="color:white">Direct Cremation</h2>
+</center>
+    <hr>
+<h3 style="color:white">Cremation w/ Traditional Service</h3>
+<p style="color:white">Name of beneficiary:<input type="text" id="Name" name="Name" required/>&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Please select your sex:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="radio" id="male" name="sex" value="male">
+  <label for="male">Male</label>
+  <input type="radio" id="female" name="sex" value="female">
+  <label for="female">Female</label></p>
+  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="Contact" name="Contact" required/>&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;
+    &nbsp;<input type="text" id="Address" name="Address" required/></p>
+  <label for="birthday" style="color:white">Birthday:</label>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="date" id="birthday" name="birthday">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a style="color:white">Relationship to the beneficiary:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="Contact" name="Contact" required/>&nbsp;
+<form id="asd" action="">
+  <p style="color:white"><b>Available Services</b></p>
+<div data-ng-app="" data-ng-init="quantity=1;price=850">
+<p style="color:white">Staff Service&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;
+
+<a style="color:white"><input type="number" ng-model="quantity"></a>
+<a style="color:white"> Price: <input type="text" ng-model="850">
+<i>Subtotal:</i> {{quantity * price}}</a>
+
+<div data-ng-app="" data-ng-init="quantity=1;price1=55">
+<form>
+  <label for="embalming" style="color:white">Embalming:&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <select name="embalming" id="embalming">
+    <option value="blank"></option>
+    <option value="Arterial Embalming">Arterial Embalming</option>
+    <option value="Cavity Embalming">Cavity Embalming</option>
+  </select>
+  <br><br>
+</form>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;<input type="number" ng-model="quantity1"></a>
+<a style="color:white"> Price1: <input type="text" ng-model="55">
+<i>Subtotal:</i> {{quantity1 * price1}}</a></br></br>
+
+<div data-ng-app="" data-ng-init="quantity=1;price2=55">
+<p style="color:white">Cremation charge
+<a style="color:white"><input type="number" ng-model="quantity2"></a>
+<a style="color:white"> Price: <input type="text" ng-model="55">
+<i>Subtotal:</i> {{quantity2 * price2}}</a>
+<p style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Available Services Total: {{quantity * price + quantity1 * price1 + quantity2 * price2}}</p>
+<p style="color:white"><b>Available Urns</b></p>
+ <p style="color:white">Product:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='product' id='product' required>
+      <option value="Individual Cremation Urns">Individual Cremation Urns</option>
+      <option value="Companion Cremation Urns">Companion Cremation Urns</option>
+      <option value="Metal Casket">Metal Casket</option>
+      <option value="Keepsake Cremation Urns">Keepsake Cremation Urns</option></p>
+      <option value="3D Artisan Portrait Cremation Urns">3D Artisan Portrait Cremation Urns</option></p>
+      <option value="Eco-Friendly Cremation Urns">Eco-Friendly Cremation Urns</option></p>
+      <option value="Child and Infant Cremation Urns">Child and Infant Cremation Urns</option></p>
+      <option value="Pet Cremation Urns">Pet Cremation Urns</option></p>
+    </select></br>
+
+    <br> Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" name="quantity" id='quantity' required></br>
+     <br> Size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='size' id='size'>
+      <option value="15 cubic inches">15 cubic inches</option>
+      <option value="100 cubic inches">100 cubic inches</option>
+      <option value="150 cubic inches">150 cubic inches</option>
+      <option value="200 cubic inches">200 cubic inches</option>
+      <option value="220 cubic inches">220 cubic inches</option>
+      <option value="250 cubic inches">250 cubic inches</option>
+      <option value="300 cubic inches">300 cubic inches</option>
+    </select>
+        <p style="color:white">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="totalCost"></span></p>
+    <h3 style="color:white">Billing form</h3>
+  <p style="color:white">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Name" name="Name" required/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Email" name="Email" required/>
+  <input type="checkbox" id="copy" name="copy" value="copy">
+  <label for="copy">Always send me updates.</label></p>
+  <p style="color:white">Permanent Address:<input type="text" id="Address2" name="Address2" required/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip code:<input type="text" id="zip" name="zip" required/></p>
+  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Number2" name="Number2" required/></p>
+  <label for="payment"style="color:white">Select your payment</br>availability:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <select name="payment" id="payment">
+    <option value="Annual">Annual</option>
+    <option value="Semi-Annual">Semi-Annual</option>
+    <option value="Quarterly">Quarterly</option>
+    <option value="Monthly">Monthly</option>
+  </select></br></br>
+  <label for="mode"style="color:white">Mode of Payment:&nbsp;&nbsp;&nbsp;</label>
+  <select name="mode" id="mode">
+    <option value="Savings accounts">Savings accounts</option>
+    <option value="Checking accounts.">Checking accounts.</option>
+    <option value="Salary account.">Salary account.</option>
+    <option value="Walk-in">Walk-in</option>
+  </select>
+    <form>
+<script>
+var productEl = document.querySelector('#product');
+var quantityEl = document.querySelector('#quantity');
+var sizeEl = document.querySelector('#size');
+var totalCostEl = document.querySelector('#totalCost');
+
+//Add the change event handlers on the applicable elements
+productEl.addEventListener('change', calculateTotal);
+quantityEl.addEventListener('change', calculateTotal);
+sizeEl.addEventListener('change', calculateTotal);
+
+//Store your data in an object literal (essentially creating a map)
+var product_price = {}; //Noticed I replaced the [] with {}
+product_price['Individual Cremation Urns'] = 80000;
+product_price['Companion Cremation Urns'] = 120000;
+product_price['Keepsake Cremation Urns'] = 150000;
+product_price['3D Artisan Portrait Cremation Urns'] = 150000;
+product_price['Eco-Friendly Cremation Urns'] = 150000;
+product_price['Child and Infant Cremation Urns'] = 150000;
+product_price['Child and Infant Cremation Urns'] = 150000;
+product_price['Pet Cremation Urns'] = 150000;
+
+
+var size_price = {};   //Noticed I replaced the [] with {}
+size_price['15 cubic inches'] = 15500;
+size_price['100 cubic inches'] = 13800;
+size_price['150 cubic inches'] = 22500;
+size_price['200 cubic inches'] = 30250;
+size_price['220 cubic inches'] = 12000;
+size_price['250 cubic inches'] = 12000;
+size_price['300 cubic inches'] = 12000;
+
+//Here's our single event handler - called when any of the 3 elements fire a 'change' event
+function calculateTotal() {
+  //console.log()
+  var unitCost = product_price[productEl.value];
+  var additionalCost = size_price[sizeEl.value] || 0;
+  var qty = quantityEl.value || 0;
+
+  totalCostEl.textContent = `${(unitCost * qty) + additionalCost}`;
+}
+</script>
+</div>
+<center>
+  <input type="submit" id="button" name="button" value="              Submit              "/><br>
+</center>
+</form>
+</body>
+</html>

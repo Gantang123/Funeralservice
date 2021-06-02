@@ -1,41 +1,84 @@
 <html>
-  <head>
-    <title>Essential Order Form</title></head>
-    <body bgcolor= "gray">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funeral Services</title>
+<style>
+body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color: #26262b;  
+}
+* {
+  box-sizing: border-box;
+}
 
-    <h1 style="color:black; font-size:33px;"> <center><u>Essential Order Form</u></center> </h1>
+.container {
+  padding: 16px;
+}
+
+input[type=text], input[type=password] {
+  width:  %;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: Gray;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+</style>
+</head>
+<body>
 <center>
+<form>
+  <div class="container">
+    <h1 style="color:white">Welcome to Funeral Services</h1>
+    <h2 style="color:white">Please fill in this form before entering to this site.</h2>
+    <hr>
 
-<form class ="form" action="" method="post">
-  {% csrf_token %}
+    <label for="email" style="color:white"><b>Name</b></label>
+    <input type="text" placeholder="Name" name="name" id="name" required>
 
-    <input bold type="text" id="name" name="name" placeholder="Enter your name"><br>
-    </center>
-    <center>
-    <div id="Essential">
-      <p id="par"><b>Select your essential here</b></p>
-           <input type ="radio" id="Gloves1" name="Essential" value="Gloves">Gloves<br>
-           <input type ="radio" id="Alcohol2" name="Essential" value="Alcohol">Alcohol<br>
-           <input type ="radio" id="Facemask3" name="Essential" value="Facemask">Facemask<br>
-           <input type ="radio" id="Faceshield4" name="Essential" value="Faceshield">Faceshield<br>
-           <input type ="radio" id="SetofPPE5" name="Essential" value="Set of PPE">Set of PPE<br> 
-           <input type ="radio" id="Handsanitizer6" name="Essential" value="Hand sanitizer">Hand sanitizer<br><br>
-      </div>
+    <label for="psw" style="color:white"><b>Contact Number</b></label>
+    <input type="text" placeholder="Number" name="Number" id="Number" required>
 
-<center>
-	         <input bold type="text" id="Quantity" name="Quantity" placeholder= "Quantity"><br>
-</center><br><center>
-<center>
-          <input bold type="text" id="Address" name="Address" placeholder= "Enter your Address"><br>
-</center>
-          <div id="Payment">
-          <p id="pay"><b>Mode of Payment</b></p>
-           <input type ="radio" id="CashonDelivery1" name="Payment" value="Cash on Delivery">Cash on Delivery<br>
-           <input type ="radio" id="OnlinePayment2" name="Payment" value="Online Payment">Online Payment<br>
-           <input type ="radio" id="Meetup3" name="Payment" value="Meet up">Meet up<br><br>
-        	<button type="submit" name="done" onclick="myFunction()">Place Order</button>
-<script>function myFunction() {alert("Your order is being processed.");}</script>
+    <label for="psw-repeat" style="color:white"><b>Address</b></label>
+    <input type="text" placeholder="Address" name="Address" id="Address" required>
+    <hr>
+    <button type="submit" class="registerbtn">Proceed</button>
+  </div>
 </form>
+</center> 
 </body>
 </html>
-
