@@ -1,98 +1,193 @@
+{% load static %}
 <html>
 <head>
+  <link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
   <title>Funeral Services</title>
   <body>
 <style>
-body { 
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: #26262b;  
+body {  
+  background-color: black;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+hr {
+  border: 3px solid white;
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+.active {
+  background-color: #04AA6D;
+  }
+a:hover, a:active {
+  background-color: red;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+.registerbtn:hover {
+  background-color: white;
+  opacity: 1;
 }
 </style>
 </body>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
 <center>
-<body>
-    <h1 style="color:white">Welcome to Funeral Services</h1>
-    <h2 style="color:white">Send Flowers</h2>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">Send Flowers</h3>
+      <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt" style="color:white"  height: 100px;></div>
+<hr>
 </center>
-    <hr>
-<h3 style="color:white">Funeral Flowers</h3>
-<p style="color:white">Name of reciever:&nbsp;&nbsp;&nbsp;
-  &nbsp;<input type="text" id="Name" name="Name" required/>
-  Please select your sex:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="male" name="sex" value="male">
-  <label for="male">Male</label>
-  <input type="radio" id="female" name="sex" value="female">
-  <label for="female">Female</label></p>
-  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="Contact" name="Contact" required/>
-  Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;
-  <input type="text" id="Address" name="Address" required/></p>
-  <label for="birthday" style="color:white">Estimated Date</br>of Arrival:</label>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="date" id="birthday" name="birthday">&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a style="color:white">Relationship to the reciever:
-    <input type="text" id="Contact" name="Contact" required/>
+<ul>
+  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+<!--   <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">About</a></li> -->
+</ul>
 <form id="asd" action="">
 <p style="color:white"><b>Available Funeral flowers</b></p>
- <p style="color:white">Product:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/sympathy.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">All White Standing Sympathy</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/remember.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Always Remember (White Standing)</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/angelic.JPG' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Angelic All White Wreathe</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/care.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Care and Compassion Spray</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/care.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Classic All White Standing Spray</div>
+</div>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/classic.jpeg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">From your loving family</div>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<p style="color:white">Product:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <select name='product' id='product' required>
-      <option value="All white Standingnding sympathy">All white standing sympathy</option>
-      <option value="Always remember (WHITE STANDING)">Always remember (WHITE STANDING)</option>
-      <option value="Angelic All White Wreath">Angelic All White Wreath</option></p>
-      <option value="Care and Compassion Spray">Care and Compassion Spray</option></p>
-      <option value="Classic all Whites Standing Spray">Classic all Whites Standing Spray</option></p>
-      <option value="From your loving family">From your loving family</option></p>
-      <option value="Funeral White Basket">Funeral White Basket</option></p>
+      <option value="All white Standing sympathy" id="flow1">All white standing sympathy</option>
+      <option value="Always remember (WHITE STANDING)" id="flow2">Always remember (WHITE STANDING)</option>
+      <option value="Angelic All White Wreath" id="flow3">Angelic All White Wreath</option></p>
+      <option value="Care and Compassion Spray" id="flow4">Care and Compassion Spray</option></p>
+      <option value="Classic all Whites Standing Spray" id="flow5">Classic all Whites Standing Spray</option></p>
+      <option value="From your loving family" id="flow6">From your loving family</option></p>
     </select></br>
 <!-- https://www.flowersdeliverymanila.com/funeral-flowers/ -->
-    <br> Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <input type="text" name="quantity" id='quantity' required></br>
-     <br> Size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select name='size' id='size'>
-      <option value="10 inches">10 inches</option>
-      <option value="15 inches">15 inches</option>
-      <option value="20 inches">20 inches</option>
-      <option value="25 inches">25 inches</option>
-      <option value="30 inches">30 inches</option>
-    </select>
-        <p style="color:white">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br> Quantity:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="totalCost"></span></p>
-    <h3 style="color:white">Billing form</h3>
-  <p style="color:white">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Name" name="Name" required/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Email" name="Email" required/>
-  <input type="checkbox" id="copy" name="copy" value="copy">
-  <label for="copy">Always send me updates.</label></p>
-  <p style="color:white">Permanent Address:<input type="text" id="Address2" name="Address2" required/>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip code:<input type="text" id="zip" name="zip" required/></p>
-  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Number2" name="Number2" required/></p>
-  <label for="payment"style="color:white">Select your payment</br>availability:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-  <select name="payment" id="payment">
-    <option value="Annual">Annual</option>
-    <option value="Semi-Annual">Semi-Annual</option>
-    <option value="Quarterly">Quarterly</option>
-    <option value="Monthly">Monthly</option>
-  </select></br></br>
-  <label for="mode"style="color:white">Mode of Payment:&nbsp;&nbsp;&nbsp;</label>
-  <select name="mode" id="mode">
-    <option value="Savings accounts">Savings accounts</option>
-    <option value="Checking accounts.">Checking accounts.</option>
-    <option value="Salary account.">Salary account.</option>
-    <option value="Walk-in">Walk-in</option>
-  </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" name="quantity" id='quantity' required></br>
+    <br> Size:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='size' id='size'>
+      <option value="Regular" id="sukat1">Regular size</option>
+      <option value="10 inches" id="sukat2"> 10 inches</option>
+      <option value="15 inches" id="sukat3">15 inches</option>
+      <option value="20 inches" id="sukat4">20 inches</option>
+      <option value="25 inches" id="sukat5">25 inches</option>
+      <option value="30 inches" id="sukat6">30 inches</option>
+    </select>
+    <p style="color:white">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <span id="totalCost" style="color:black">></span></p>
     <form>
 <script>
 var productEl = document.querySelector('#product');
@@ -107,16 +202,16 @@ sizeEl.addEventListener('change', calculateTotal);
 
 //Store your data in an object literal (essentially creating a map)
 var product_price = {}; //Noticed I replaced the [] with {}
-product_price['All white standing sympathy'] = 120000;
-product_price['Always remember (WHITE STANDING)'] = 150000;
-product_price['Angelic All White Wreath'] = 150000;
-product_price['Care and Compassion Spray'] = 150000;
-product_price['Classic all Whites Standing Spray'] = 150000;
-product_price['From your loving family'] = 150000;
-product_price['Funeral White Basket'] = 150000;
+product_price['All white Standing sympathy'] = 1500;
+product_price['Always remember (WHITE STANDING)'] = 3000;
+product_price['Angelic All White Wreath'] = 2500;
+product_price['Care and Compassion Spray'] = 2800;
+product_price['Classic all Whites Standing Spray'] = 4650;
+product_price['From your loving family'] = 1750;
 
 
 var size_price = {};   //Noticed I replaced the [] with {}
+size_price['Regular'] = 15500;
 size_price['10 inches'] = 15500;
 size_price['15 inches'] = 13800;
 size_price['20 inches'] = 22500;
@@ -135,7 +230,7 @@ function calculateTotal() {
 </script>
 </div>
 <center>
-  <input type="submit" id="button" name="button" value="              Submit              "/><br>
+  <a href="sixth.html" type="submit" class="registerbtn" style="color:black">Proceed to payment center</a>
 </center>
 </form>
 </body>

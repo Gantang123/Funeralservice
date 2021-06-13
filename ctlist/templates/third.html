@@ -1,103 +1,174 @@
+{% load static %}
 <html>
 <head>
+<link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funeral Services</title>
 <style>
 body {  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: #26262b;  
-  background-image: url('file:///home/bynnns/Desktop/FUNERAL/wallpaper.jpg');"> 
+  background-color: black;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: cover;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+hr {
+  border: 3px solid white;
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+
+.active {
+  background-color: #04AA6D;
+  }
+a:hover, a:active {
+  background-color: red;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+.registerbtn:hover {
+  background-color: white;
+  opacity: 1;
 }
 </style>
 </head>
-<body>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
 <center>
-<form>
-  <div class="container">
-    <h1 style="color:white">Welcome to Funeral Services</h1>
-    <h2 style="color:white">Traditional Funeral Services</h2>
-    <hr>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">Traditional Funeral Services</h3>
+      <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
 </head>
+
+<body onload="startTime()">
+
+<div id="txt" style="color:white"  height: 100px;></div>
+<hr>
 </center>
-
-  <p style="color:white">Name of beneficiary:<input type="text" id="Name" name="Name" required/>&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Please select your sex:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="radio" id="male" name="sex" value="male">
-  <label for="male">Male</label>
-  <input type="radio" id="female" name="sex" value="female">
-  <label for="female">Female</label></p>
-  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="Contact" name="Contact" required/>&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;
-    &nbsp;<input type="text" id="Address" name="Address" required/></p>
-  <label for="birthday" style="color:white">Birthday:</label>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="date" id="birthday" name="birthday">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <a style="color:white">Relationship to the beneficiary:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" id="Contact" name="Contact" required/>&nbsp;
-
+<ul>
+  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+<!--   <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">About</a></li> -->
+</ul>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/wooden.jpeg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e"><b>Wooden Casket</b></div>
+</div>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/metal.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e"><b>Metal Casket</b></div>
+</div>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/imported.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e"><b>Imported Casket</b></div>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br>
   <script src="label.js" type="text/javascript"></script>
   <form id="privtelabel" method="POST">
-  <p style="color:white">Product:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <p style="color:white">Product:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <select name='product' id='product' required>
-      <option value="Wooden Casket">Wooden Casket(80000)</option>
-      <option value="Metal Casket">Metal Casket(120000)</option>
-      <option value="Imported Casket">Imported Casket(150000)</option></p>
+      <option value="Wooden Casket" id="Item1">Wooden Casket(80,000)</option>
+      <option value="Metal Casket" id="Item2">Metal Casket(120,000)</option>
+      <option value="Imported Casket" id="Item3">Imported Casket(150,000)</option></p>
     </select></br>
 
-    <br> Quantity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-     <input type="text" name="quantity" id='quantity' required></br>
-     <br> Size:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <select name='size' id='size'>
-      <option value="Length: 78 inches Width: 23 inches">Length: 78 inches Width: 23 inches</option>
-      <option value="Length: 75 inches Width: 22 inches">Length: 75 inches Width: 22 inches</option>
-      <option value="Length: 83 inches Width: 28 inches">Length: 83 inches Width: 28 inches</option>
-      <option value="Length: 85 inches Width: 38 inches">Length: 85 inches Width: 38 inches</option>
-      <option value="Length: 60 inches Width: 11 inches">Length: 60 inches Width: 11 inches</option>
-    </select>
-    <form>
-  <h3 style="color:white">Billing form</h3>
-  <p style="color:white">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Name" name="Name" required/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Email" name="Email" required/>
-  <input type="checkbox" id="copy" name="copy" value="copy">
-  <label for="copy">Always send me updates.</label></p>
-  <p style="color:white">Permanent Address:<input type="text" id="Address2" name="Address2" required/>
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zip code:<input type="text" id="zip" name="zip" required/></p>
-  <p style="color:white">Contact Number:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="Number2" name="Number2" required/></p>
-  <label for="payment"style="color:white">Select your payment</br>availability:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-  <select name="payment" id="payment">
-    <option value="Annual">Annual</option>
-    <option value="Semi-Annual">Semi-Annual</option>
-    <option value="Quarterly">Quarterly</option>
-    <option value="Monthly">Monthly</option>
-  </select></br></br>
-  <label for="mode"style="color:white">Mode of Payment:&nbsp;&nbsp;&nbsp;</label>
-  <select name="mode" id="mode">
-    <option value="Savings accounts">Savings accounts</option>
-    <option value="Checking accounts.">Checking accounts.</option>
-    <option value="Salary account.">Salary account.</option>
-    <option value="Walk-in">Walk-in</option>
-  </select>
-  <p style="color:white">Price:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br> Quantity:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="totalCost"></span></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <input type="text" name="quantity" id='quantity' required></br>
+     <br> Size:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <select name='size' id='size'>
+      <option value="Length: 78 inches Width: 23 inches" id="size1" name="Length: 78 inches Width: 23 inches">Length: 78 inches Width: 23 inches</option>
+      <option value="Length: 75 inches Width: 22 inches" id="size2" name="Length: 75 inches Width: 22 inches">Length: 75 inches Width: 22 inches</option>
+      <option value="Length: 83 inches Width: 28 inches" id="size3" name="Length: 83 inches Width: 28 inches">Length: 83 inches Width: 28 inches</option>
+      <option value="Length: 85 inches Width: 38 inches" id="size4" name="Length: 85 inches Width: 38 inches">Length: 85 inches Width: 38 inches</option>
+      <option value="Length: 60 inches Width: 11 inches" id="size5" name="Length: 60 inches Width: 11 inches">Length: 60 inches Width: 11 inches</option>
+    </select> 
+  <p style="color:white">Price:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    <span id="totalCost" style="color:black"></span></p>
  </form>
 <script>
 var productEl = document.querySelector('#product');
@@ -105,27 +176,25 @@ var quantityEl = document.querySelector('#quantity');
 var sizeEl = document.querySelector('#size');
 var totalCostEl = document.querySelector('#totalCost');
 
-//Add the change event handlers on the applicable elements
 productEl.addEventListener('change', calculateTotal);
 quantityEl.addEventListener('change', calculateTotal);
 sizeEl.addEventListener('change', calculateTotal);
 
-//Store your data in an object literal (essentially creating a map)
-var product_price = {}; //Noticed I replaced the [] with {}
+var product_price = {};
 product_price['Wooden Casket'] = 80000;
 product_price['Metal Casket'] = 120000;
 product_price['Imported Casket'] = 150000;
 
-var size_price = {};   //Noticed I replaced the [] with {}
+var size_price = {}; 
 size_price['Length: 78 inches Width: 23 inches'] = 15500;
 size_price['Length: 75 inches Width: 22 inches'] = 13800;
 size_price['Length: 83 inches Width: 28 inches'] = 22500;
 size_price['Length: 85 inches Width: 38 inches'] = 30250;
 size_price['Length: 60 inches Width: 11 inches'] = 12000;
 
-//Here's our single event handler - called when any of the 3 elements fire a 'change' event
+
 function calculateTotal() {
-  //console.log()
+
   var unitCost = product_price[productEl.value];
   var additionalCost = size_price[sizeEl.value] || 0;
   var qty = quantityEl.value || 0;
@@ -135,7 +204,7 @@ function calculateTotal() {
 </script>
   </form>
   <center>
-  <input type="submit" id="button" name="button" value="              Submit              "/><br>
+    <a href="sixth.html" type="submit" class="registerbtn" style="color:black">Proceed to payment center</a>
 </center>
 </form>
 </div>

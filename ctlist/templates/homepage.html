@@ -1,84 +1,136 @@
+{% load static %}
 <html>
 <head>
+    <link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funeral Services</title>
 <style>
 body {  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: #26262b;  
-}
-* {
-  box-sizing: border-box;
+  background-color: black;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
-  padding: 16px;
+  padding: 12px;
 }
 
-input[type=text], input[type=password] {
+input{
   width:  %;
-  padding: 15px;
+  padding: 8px;
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
   background: #f1f1f1;
 }
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
 hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-.registerbtn {
-  background-color: Gray;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 25%;
-  opacity: 0.9;
+  border: 3px solid white;
+  border-radius: 3px;
 }
 
 .registerbtn:hover {
   opacity: 1;
 }
-
-a {
-  color: dodgerblue;
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.signin {
-  background-color: #f1f1f1;
+a:hover, a:active {
+  background-color: red;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
   text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: gray;
+   color: white;
+   text-align: center;
 }
 </style>
 </head>
-<body>
+<marquee style="font-family:Book Antiqua; color: black" bgcolor="gray" scrolldelay="5">IMPORTANT NOTICE: We are currently restructoring the business to introduce new training and working practices to keep both our customers and our staff safe. No new hires will be accepted at this time. If you have an urgent requirement due to COVID-19, please contact us.</marquee>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
 <center>
-<form>
-  <div class="container">
-    <h1 style="color:white">Welcome to Funeral Services</h1>
-    <h2 style="color:white">Please fill in this form before entering to this site.</h2>
-    <hr>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">A place where everybody is fresh to death.</h3>
+</center>
+<ul>
+    <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+<!--   <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">About</a></li> -->
+</ul>
+<center>
+    <h1 style="color:#f64848" "font-size:35px;">Haven’t you planned</h1> 
+    <h1 style="color:#d23535" "font-size:35px;"> for a better place to die?</h1>
+    <h2 style="color:#d23535" "font-size:35px;">The time is ticking. Start making a plan.</h2>
+    <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+</head>
 
-    <label for="email" style="color:white"><b>Name</b></label>
-    <input type="text" placeholder="Name" name="name" id="name" required>
+<body onload="startTime()">
 
-    <label for="psw" style="color:white"><b>Contact Number</b></label>
-    <input type="text" placeholder="Number" name="Number" id="Number" required>
-
-    <label for="psw-repeat" style="color:white"><b>Address</b></label>
-    <input type="text" placeholder="Address" name="Address" id="Address" required>
-    <hr>
-    <button type="submit" class="registerbtn">Proceed</button>
-  </div>
-</form>
-</center> 
+<div id="txt" style="color:white"  height: 100px;></div>
+</center>
+<div class="footer">
+  <p><b>Facebook:</b> Funeralservices-----<b>Contact Number:</b> 09150472988-----<b>Email:</b> funeralservices@gmail.com</p>
+</div>
 </body>
 </html>

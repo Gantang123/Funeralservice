@@ -1,31 +1,173 @@
+{% load static %}
 <html>
 <head>
+    <link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
   <title>Funeral Services</title>
   <body>
 <style>
-body { 
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: #26262b;  
+body {  
+  background-color: black;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+hr {
+  border: 3px solid white;
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+.active {
+  background-color: #04AA6D;
+  }
+a:hover, a:active {
+  background-color: red;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+.registerbtn:hover {
+  background-color: white;
+  opacity: 1;
 }
 </style>
 </body>
 </head>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
 <center>
-<body>
-    <h1 style="color:white">Welcome to Funeral Services</h1>
-    <h2 style="color:white">Others</h2>
-    <hr>
-    <h3 style="color:white">What is your suggestion/recommendation?</h3>
-
-        <div id="formcontainer">
-        <form id="form1" name="form1" method="post" action="">
-            <label>
-            <textarea name="input" id="input" cols="45" rows="5"></textarea>
-            </label></br>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">Send Flowers</h3>
+<hr>
+</center>
+<ul>
+  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+</ul>
+    <form>
+  <h3 style="color:white">Billing form</h3>
+  <p style="color:white">Name:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="Name" name="Name" required/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="Email" name="Email" required/>
+  <input type="checkbox" id="copy" name="copy" value="copy">
+  <label for="copy">Always send me updates.</label></p>
+  <p style="color:white">Permanent Address:<input type="text" id="Address2" name="Address2" required/>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   Zip code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="text" id="zip" name="zip" required/></p>
+  <p style="color:white">Contact Number:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="Number2" name="Number2" required/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Please select your sex:&nbsp;
+    <input type="radio" id="male" name="sex" value="male1">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="sex" value="female1">
+    <label for="female">Female</label></p></p>
+  <label for="payment"style="color:white">Select your payment</br>availability:
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <select name="payment" id="payment">
+    <option value="Annual" id="pay1" name="Annual">Annual</option>
+    <option value="Semi-Annual" id="pay2" name="Semi-Annual">Semi-Annual</option>
+    <option value="Quarterly" id="pay3" name="Quarterly">Quarterly</option>
+    <option value="Monthly" id="pay4" name="Monthly">Monthly</option>
+  </select></br></br>
+  <label for="mode"style="color:white">Mode of Payment:
+  &nbsp;&nbsp;&nbsp;</label>
+  <select name="mode" id="mode">
+    <option value="Savings accounts" id="card1" name="atm1">Savings accounts</option>
+    <option value="Checking accounts" id="card2" name="atm2">Checking accounts.</option>
+    <option value="Salary account" id="card3" name="atm3">Salary account.</option>
+    <option value="Walk-in" id="card4" name="atm4">Walk-in</option>
+  </select>
+<p style="color:white">CVV:
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="Name" name="Name" placeholder="XXXX" required/>
+<p style="color:white">Card Number:
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <input type="text" id="Name" name="Name" placeholder="XXXX-XXXX-XXXX-XXXX" required/>
+<p style="color:white">Expiration Date:</p>
+<form>
+  <label for="Month"></label>
+  <select name="Month" id="Month">
+    <option value="January" id="month1" name="January">January</option>
+    <option value="February" id="month2" name="February">February</option>
+    <option value="March" id="month3" name="March">March</option>
+    <option value="April" id="month4" name="April">April</option>
+    <option value="May" id="month5" name="May">May</option>
+    <option value="June" id="month6" name="June">June</option>
+    <option value="July" id="month7" name="July">July</option>
+    <option value="August" id="month8" name="August">August</option>
+    <option value="September" id="month9" name="September">September</option>
+    <option value="October" id="month10" name="October">October</option>
+    <option value="November" id="month11" name="November">November</option>
+    <option value="December" id="month12" name="December">December</option>
+  </select>
+  <label for="Year"></label>
+  <select name="Year" id="Year">
+    <option value="2021" id="year1" name="2021">2021</option>
+    <option value="2022" id="year2" name="2022">2022</option>
+    <option value="2023" id="year3" name="2023">2023</option>
+    <option value="2024" id="year4" name="2024">2024</option>
+    <option value="2025" id="year5" name="2025">2025</option>
+  </select>
+</form>
             <p style="color:white">Need Help: Contact Us @ 09150472988</p>
-            <input Onclick="submitters()" type="button" name="export" id="export" value="Submit" />
+            <center>
+            <a href="" onclick="myFunction()" class="registerbtn" style="color:black">Submit and save</a>
+            <script>
+              function myFunction() {
+                var txt;
+                if (confirm("Your plan is now on process. We will inform you via email once your plan is ready.")) {
+                  txt = "You pressed OK!";
+                } else {
+                  txt = "You pressed Cancel!";
+                }
+                document.getElementById("demo").innerHTML = txt;
+              }
+</script>
+          </center>
         </form>
         </div>
-</center>
 </body>
 </html>
