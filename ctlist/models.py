@@ -1,23 +1,12 @@
 from django.db import models
-
-class Form(models.Model):
-	Name = models.CharField(max_length=50)
-	CHOICES = (('male','male1'),('female','female1'))
-	sex = models.CharField(choices=CHOICES,max_length=50)
-	Contact = models.IntegerField()
-	Address = models.CharField(max_length=50)
-	birthday = models.DateField(null=True)
-	relation = models.CharField(max_length=50)
-	def __str__(self):	
-		return self.Name
-
+ 
 class Item(models.Model):
 	PRODUCT_CHOICES = (
     ('Item1', 'Wooden Casket'),
     ('Item2', 'Metal Casket'),
     ('Item3', 'Imported Casket')
 	)
-	casket = models.CharField(max_length=15, choices=PRODUCT_CHOICES, default='Item1')
+	product = models.CharField(max_length=15, choices=PRODUCT_CHOICES, default='Item1')
 	Quantity = models.IntegerField()
 	SIZE_CHOICES = (
     ('size1', 'Length: 78 inches Width: 23 inches'),
@@ -28,7 +17,7 @@ class Item(models.Model):
 	)
 	size = models.CharField(max_length=15, choices=SIZE_CHOICES, default='size1')
 	def __str__(self):
-		return self.PRODUCT_CHOICES
+		return self.product
 
 class Details(models.Model):
 	Quantity = models.CharField(max_length=50)
@@ -131,15 +120,14 @@ class Bagahe(models.Model):
 		return self.Name
 
 class Suggestion(models.Model):
-	User = models.ManyToManyField(Form)
-
-	Message = models.TextField(max_length=100, null=True)
-
+	Gantangproduct = models.CharField(max_length=50, default='none')
+	Product_Category = models.CharField(max_length=50, default='none')
+	quantity = models.CharField(max_length=50, default='none')
+	price = models.CharField(max_length=50, default='none')
 	def __str__(self):
-		return self.Message
+		return self.Gantangproduct
 
 class Starling(models.Model):
-	User = models.ManyToManyField(Form)
 
 	Star = (('star5','5'),('star4','4'),('star3','3'),('star2','2'),('star1','1'))
 	rate = models.CharField(max_length=20, choices=Star, default='none')

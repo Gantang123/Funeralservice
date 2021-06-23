@@ -1,0 +1,382 @@
+{% load static %}
+<html>
+<head>
+    <link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
+  <title>Funeral Services</title>
+  <body>
+<style>
+body {  
+  background-color: gray;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+hr {
+  border: 3px solid white;
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+.active {
+  background-color: #04AA6D;
+  }
+a:hover, a:active {
+  background-color: red;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+.registerbtn:hover {
+  background-color: white;
+  opacity: 1;
+}
+#dvtext {
+  display: none;
+}
+#chkYes:checked ~ #dvtext {
+  display: block;
+}
+#dvtexts {
+  display: none;
+}
+#chkYess:checked ~ #dvtexts {
+  display: block;
+}
+</style>
+</body>
+</head>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
+<center>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">Other services</h3>
+          <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt" style="color:white"  height: 100px;></div>
+<hr>
+</center>
+<ul>
+  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+  <li style="float:center"><a href="seventh.html" type="submit" class="registerbtn">Other services</a></li>
+</ul></br>
+<form id="asd" action="">
+<p style="color:white"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;
+Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<b>Funeral Cementery</b></p>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Jeep1.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Jeep#1 (P350)</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Jeep2.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Jeep#2 (P500)</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Jeep3.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Jeep#3 (P700)</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Cementery1.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Providence Memorial Park (P2500)</div>
+</div><div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Cementery2.jpeg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Manila Memorial Park (P4000)</div>
+</div>
+<div class="gallery">
+  <p target="_blank">
+    <img src="{% static 'IMAGE/Cementery3.jpg' %}" alt="My image" style="width:180;height:150px;">
+  </p>
+  <div class="desc" style="color:#e44e4e">Pantheon de Dasmarinas (P6500)</div>
+</div></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<center>
+    <form>
+    <table>
+        <tr>
+            <td>
+                <label  style="color:white" for="Gantangproduct" >Service code:</label>
+            </td>
+            <td>
+                <input id="Gantangproduct" name="product" type="text" size="28" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label  style="color:white" for="product">Date:</label>
+            </td>
+            <td>
+                <input id="Product_Category" name="product" type="text" size="28" placeholder="Month-Day-Year" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label  style="color:white" for="quantity">Quantity:</label>
+            </td>
+            <td>
+                <input id="quantity" name="quantity" width="196px" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label  style="color:white" for="price">Price:</label>
+            </td>
+            <td>
+                <input id="price" name="price" size="28" required/>
+            </td>
+        </tr>
+    </table>
+    <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reset the order" />
+    <input type="button" id="btnAddProduct" onclick="AddProduct();" value="Add more to cart" >
+</form>
+<br>
+<p id="Web"></p> <br/>
+<h2 style="color:white"> Your Cart </h2>
+<p id="Dev"></p>
+<h2 style="color:white">Grand Total:</h2>
+<p id="Three"></p>
+<script>
+   var Funeral_Item = [];
+    var Gantang = [];
+/*mag add ka dito*/
+        function AddProduct() {
+            var Gantangproduct = document.getElementById("Gantangproduct").value;
+            var Product_Category = document.getElementById("Product_Category").value;
+            var qty = document.getElementById("quantity").value;
+            var price = document.getElementById("price").value;
+/*bagong item*/
+            var New = {
+                Product_Name: null,
+                Product_Category: null,
+                Quantity: 0,
+                Amount: 0.00,
+            };
+            New.Product_Name = Gantangproduct;
+            New.Product_Category = Product_Category;
+            New.Quantity = qty;
+            New.Amount = price;
+
+
+            Funeral_Item.push(New);
+
+
+            var Bynns = "<table border='1|1' >";
+            Bynns  += "<td>Jeep code</td>";
+            Bynns += "<td>Date</td>";
+            Bynns += "<td>Quantity</td>";
+            Bynns += "<td>Price</td>";
+            Bynns += "<td>Options</td>";
+            for (var i = 0; i < Funeral_Item.length; i++) {
+                Bynns += "<tr>";
+                Bynns += "<td>" + Funeral_Item[i].Product_Name + "</td>";
+                Bynns += "<td>" + Funeral_Item[i].Product_Category + "</td>";
+                Bynns += "<td>" + Funeral_Item[i].Quantity + "</td>";
+                Bynns += "<td>" + Funeral_Item[i].Amount + "</td>";
+                Bynns += "<td><button type='submit' onClick='deleteProduct(\"" + Funeral_Item[i].Product_Name + "\", this);'/>X</button> &nbsp <button type='submit' onClick='Addtocart(\"" + Funeral_Item[i].Product_Name + "\", this);'/>Add to Cart</button></td>";
+                Bynns += "</tr>";
+            }
+            Bynns += "</table>";
+            document.getElementById("Web").innerHTML = Bynns;
+
+            document.getElementById("resetbtn").click()
+        } /*delete product*/
+        function deleteProduct(Product_Name, e) {
+            e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+            for (var i = 0; i < Funeral_Item.length; i++) {
+                if (Funeral_Item[i].Product_Name == Product_Name) {
+                    // DO NOT CHANGE THE 1 HERE
+                    Funeral_Item.splice(i, 1);
+                }
+            }
+        }
+/*add itooo*/
+        function Addtocart(Product_Name) {
+
+            for (var i = 0; i < Funeral_Item.length; i++) {
+                if (Funeral_Item[i].Product_Name == Product_Name) {
+                    var cartItem = null;
+                    for (var k = 0; k < Gantang.length; k++) {
+                        if (Gantang[k].product.Product_Name == Funeral_Item[i].Product_Name) {
+                            cartItem = Gantang[k];
+                            Gantang[k].Quantity++;
+                            break;
+                        }
+                    }
+                    if (cartItem == null) {
+                        
+                        var cartItem = {
+                            product: Funeral_Item[i],
+                            Quantity: Funeral_Item[i].Quantity 
+                        };
+                        Gantang.push(cartItem);
+                    }
+                }
+            }
+
+            renderCartTables();
+
+        }
+
+        function renderCartTables() {
+        var Bynns = '';
+        var Hi = document.getElementById("Dev");
+        Hi.innerHTML = ''; 
+
+        Bynns += "<table id='tblCart' border='1|1'>";
+        Bynns += "<tr><td>Jeep code</td>";
+        Bynns += "<td>Date</td>";
+        Bynns += "<td>Quantity</td>";
+        Bynns += "<td>Price</td>";
+        Bynns += "<td>Total</td>";
+        Bynns += "<td>Options</td></tr>";
+        var GrandTotal = 0;
+        for (var i = 0; i < Gantang.length; i++) {
+            Bynns += "<tr>";
+            Bynns += "<td>" + Gantang[i].product.Product_Name + "</td>";
+            Bynns += "<td>" + Gantang[i].product.Product_Category + "</td>";
+            Bynns += "<td>" + Gantang[i].Quantity + "</td>";
+            Bynns += "<td>" + Gantang[i].product.Amount + "</td>";
+            Bynns += "<td>" + parseFloat(Gantang[i].product.Amount) * parseInt(Gantang[i].Quantity) + "</td>";
+            Bynns += "<td><button type='submit' onClick='Minus(\"" + Gantang[i].product.Product_Name + "\", this);'/> - </button> &nbsp<button type='submit' onClick='addQuantity(\"" + Gantang[i].product.Product_Name + "\", this);'/> + </button> &nbsp<button type='submit' onClick='removeItem(\"" + Gantang[i].product.Product_Name + "\", this);'/> X </button></td>";
+            Bynns += "</tr>";
+
+           GrandTotal += parseFloat(Gantang[i].product.Amount) * parseInt(Gantang[i].Quantity);            
+
+        }
+        document.getElementById('Three').innerHTML = GrandTotal;
+        Bynns += "</table>";
+        Hi.innerHTML = Bynns;
+    }
+
+
+        function Minus(Product_Name)
+        {
+            
+            for (var i = 0; i < Gantang.length; i++) {
+                if (Gantang[i].product.Product_Name == Product_Name) {
+                    Gantang[i].Quantity--;
+                }
+
+                if (Gantang[i].Quantity == 0) {
+                    Gantang.splice(i,1);
+                }
+        
+            }
+            renderCartTables();
+        }
+        function addQuantity(Product_Name)
+        {
+            
+            for (var i = 0; i < Gantang.length; i++) {
+                if (Gantang[i].product.Product_Name == Product_Name) {
+                    Gantang[i].Quantity++;
+                }  
+            }
+            renderCartTables();
+        }
+        function removeItem(Product_Name)
+        {
+            
+            for (var i = 0; i < Gantang.length; i++) {
+                if (Gantang[i].product.Product_Name == Product_Name) {
+                    Gantang.splice(i,1);
+                }
+
+            }
+            renderCartTables();
+        }
+</script>
+</center></br>
+<center>
+  <a href="sixth.html" type="submit" class="registerbtn" style="color:black">Proceed to payment center</a>
+</center>
+</form>
+</body>
+</html>

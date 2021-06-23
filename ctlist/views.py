@@ -1,19 +1,21 @@
 from django.shortcuts import redirect,render
-from .models import Form, Item, Details, Bayad, Bagahe, Suggestion, Starling
+from .models import Item, Details, Bayad, Bagahe, Suggestion, Starling
 
 def homepage(request):
 
 	return render(request,'homepage.html')
 
-def Item(request):
+def Traditional(request):
 
-	# User=Form.objects.create(
-	# 	name = request.POST['name'],
-	# 	address = request.POST['address'],
-	# 	number = request.POST['number'])
-	
-	# # return redirect('ProjectPage')
-	return render(request,'second.html')
+	return render(request,'third.html')	
+
+def TraditionalInput(request):
+
+	item=Item.objects.create(
+		product=request.POST['product'],
+		Quantity=request.POST['Quantity']
+		)
+	return render(request,'sixth.html')
 
 def Details(request):
 	
@@ -40,3 +42,7 @@ def Suggestion(request):
 	
 
 	return render(request,'sixth.html')
+
+def Starling(request):
+
+	return render(request,'seventh.html')

@@ -70,6 +70,28 @@ a:link, a:visited {
     <div class="container">
     <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
     <h3 style="color:white">Send Flowers</h3>
+          <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt" style="color:white"  height: 100px;></div>
 <hr>
 </center>
 <ul>
@@ -77,6 +99,7 @@ a:link, a:visited {
   <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
   <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
   <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
+  <li style="float:center"><a href="seventh.html" type="submit" class="registerbtn">Other services</a></li>
 </ul>
     <form>
   <h3 style="color:white">Billing form</h3>
