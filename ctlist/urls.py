@@ -3,14 +3,21 @@ from . import views
 
 urlpatterns = [
 	path('', views.homepage),
+		path('home', views.home, name="home"),
+	path('Traditional', views.Traditional, name="Traditional"),
 	path('Traditional', views.Traditional, name="Traditional"),
 	path('ProjectPage', views.TraditionalInput, name="ProjectPage"),
-	# path('second.html', views.Item, name="second.html"),
-	path('third.html', views.Details, name="third.html"),
-	path('fourth.html', views.Bayad, name="fourth.html"),
-	path('fifth.html', views.Bagahe, name="fifth.html"),
-	path('sixth.html', views.Suggestion, name="sixth.html"),
-	path('seventh.html', views.Starling, name="seventh.html")
+	path('Submit', views.Payment, name="Submit"),
+	path('Direct', views.Cremation, name="Direct"),
+	path('Flower', views.Flower, name="Flower"),
+	path('Other', views.Suggestion, name="Other"),
+	path('CRUD', views.Starling, name="CRUD"),
+	path('isip', views.Bura, name="isip"),
+	path('delete/<int:int', views.Deletes)
+
+	# path('third.html', views.Details, name="third.html"),
+	# path('sixth.html', views.Suggestion, name="sixth.html"),
+	# path('seventh.html', views.Starling, name="seventh.html")
 ]
 
 

@@ -1,0 +1,175 @@
+{% load static %}
+<html>
+<head>
+    <link href="('{{ STATIC_URL }}IMAGE/background.jpg')">
+  <title>Funeral Services</title>
+  <body>
+<style>
+body {  
+  background-color: gray;
+  background-image: url( "{% static 'IMAGE/background.jpg' %}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+hr {
+  border: 3px solid white;
+  border-radius: 3px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: white;
+}
+.active {
+  background-color: #04AA6D;
+  }
+a:hover, a:active {
+  background-color: red;
+}
+a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+} 
+.registerbtn:hover {
+  background-color: white;
+  opacity: 1;
+}
+#dvtext {
+  display: none;
+}
+#chkYes:checked ~ #dvtext {
+  display: block;
+}
+#dvtexts {
+  display: none;
+}
+#chkYess:checked ~ #dvtexts {
+  display: block;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</body>
+</head>
+<marquee style="font-family:Book Antiqua; color: black" bgcolor="gray" scrolldelay="5">ANNOUNCEMENT: The funiverse funeral services are about to processed your plan. Please wait and check your email account in three working days. Thank you!</marquee>
+<body style="background-image: url(('{{ STATIC_URL }}IMAGE/background.jpg'))';">
+<center>
+    <div class="container">
+    <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
+    <h3 style="color:white">Overview of your order</h3>
+          <script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 1000);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i}; 
+  return i;
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<div id="txt" style="color:white"  height: 100px;></div>
+<hr>
+</center>
+<table>
+  <tr>
+    <th style="color:white">Product Name:</th>
+    <th style="color:white">Size:</th>
+    <th style="color:white">Quantity:</th>
+    <th style="color:white">Name:</th>
+    <th style="color:white">Payment availability:</th>
+    <th style="color:white">Mode of payment:</th>
+  </tr>
+    <tr>
+    <td>{{display4.product}}</td>
+    <td>{{display4.size}}</td>
+    <td>{{display4.Quantity}}</td>
+    <td>{{display5.Name}}</td>
+    <td>{{display5.payment}}</td>
+    <td>{{display5.mode}}</td>
+  </tr>
+</table>
+<!-- <center>
+    <p style="color:white"><b>Flower Name: </b>{{display4.product}}</p><br>
+    <p style="color:white"><b>Size: </b>{{display4.size}}</p><br>
+    <p style="color:white"><b>Quantity: </b>{{display4.Quantity}}</p><br>
+    <p style="color:white"><b>Name: </b>{{display5.Name}}</p><br>
+    <p style="color:white"><b>Payment availability: </b>{{display5.payment}}</p><br>
+    <p style="color:white"><b>Mode of payment: </b>{{display5.mode}}</p><br>
+ </center> -->
+ <center>
+<a class="delete" href="/delete/{{Gantang.id}}">Delete this plan</a>
+</center>
+</body>
+</html>

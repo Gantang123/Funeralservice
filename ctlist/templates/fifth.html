@@ -116,13 +116,14 @@ function checkTime(i) {
 <hr>
 </center>
 <ul>
-  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
-  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
-  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
-  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li> 
-  <li style="float:center"><a href="seventh.html" type="submit" class="registerbtn">Other services</a></li>
+   <li style="float:center"><a href="home" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="Traditional" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="Direct" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="Flower" type="submit" class="registerbtn">Send Flowers</a></li>
+    <li style="float:center"><a href="CRUD" type="submit" class="registerbtn">Other services</a></li>
 </ul>
-<form id="asd" action="">
+ <form id="privtelabel" method="POST" action="ProjectPage">
+    {% csrf_token %}
 <p style="color:white"><b>Available Funeral flowers</b></p>
 <div class="gallery">
   <p target="_blank">
@@ -172,7 +173,7 @@ function checkTime(i) {
     <br> Quantity:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" name="quantity" id='quantity' required></br>
+    <input type="text" name="Quantity" id='Quantity' required></br>
     <br> Size:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -230,7 +231,7 @@ function calculateTotal() {
 </script>
 </div>
 <center>
-  <a href="sixth.html" type="submit" class="registerbtn" style="color:black">Proceed to payment center</a>
+  <input type="submit" class="registerbtn" style="color:black" value="Proceed to payment center"></input>
 </center>
 </form>
 </body>

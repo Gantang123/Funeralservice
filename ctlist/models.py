@@ -2,11 +2,11 @@ from django.db import models
  
 class Item(models.Model):
 	PRODUCT_CHOICES = (
-    ('Item1', 'Wooden Casket'),
-    ('Item2', 'Metal Casket'),
-    ('Item3', 'Imported Casket')
+    ('Wooden Casket', 'Item1'),
+    ('Metal Casket', 'Item2'),
+    ('Imported Casket ', 'Item3')
 	)
-	product = models.CharField(max_length=15, choices=PRODUCT_CHOICES, default='Item1')
+	product = models.CharField(max_length=100, choices=PRODUCT_CHOICES, default='Item1')
 	Quantity = models.IntegerField()
 	SIZE_CHOICES = (
     ('size1', 'Length: 78 inches Width: 23 inches'),
@@ -15,7 +15,7 @@ class Item(models.Model):
     ('size4', 'Length: 85 inches Width: 38 inches'),
     ('size5', 'Length: 60 inches Width: 11 inches')
 	)
-	size = models.CharField(max_length=15, choices=SIZE_CHOICES, default='size1')
+	size = models.CharField(max_length=100, choices=SIZE_CHOICES, default='size1')
 	def __str__(self):
 		return self.product
 
@@ -73,56 +73,56 @@ class Bagahe(models.Model):
 	Name = models.CharField(max_length=50)
 	Email = models.CharField(max_length=50)
 	Address2 = models.CharField(max_length=50)
-	zipcode = models.CharField(max_length=50)
+	zipp = models.CharField(max_length=50)
 	Number2 = models.CharField(max_length=50)
-	CHOICESS = (('male','male1'),('female','female1'))
-	select = models.CharField(choices=CHOICESS,max_length=50, default="none")
+	Sex = models.CharField(max_length=50)
 	Bayad = (
-    ('pay1', 'Annual'),
-    ('pay2', 'Semi-Annual'),
-    ('pay3', 'Quarterly'),
-    ('pay4', 'Monthly')
+    ('Annual', 'Annual'),
+    ('Semi-Annual', 'Semi-Annual'),
+    ('Quarterly', 'Quarterly'),
+    ('Monthly', 'Monthly')
     	)
 	payment = models.CharField(max_length=50, choices=Bayad, default='pay1')    	
-	card = (
-    ('card1', 'atm1'),
-    ('card2', 'atm2'),
-    ('card3', 'atm3'),
-    ('card4', 'atm4')
+	atms = (
+    ('Savings accounts', 'Savings accounts'),
+    ('Checking accounts', 'Checking accounts'),
+    ('Salary account', 'Salary account'),
+    ('Walk-in', 'Walk in')
    		)
-	atm = models.CharField(max_length=15, choices=card, default='card1')
-	CVV = models.CharField(max_length=50)
-	CARD_NUMBER = models.CharField(max_length=50)
-	month = (
-    ('month1', 'January'),
-    ('month2', 'February'),
-    ('month3', 'March'),
-    ('month4', 'April'),
-    ('month5', 'May'),
-    ('month6', 'June'),
-    ('month7', 'July'),
-    ('month8', 'August'),
-    ('month9', 'September'),
-    ('month10', 'October'),
-    ('month11', 'November'),
-    ('month12', 'December')
+	atm = models.CharField(max_length=50, choices=atms, default='card1')
+	mode = models.CharField(max_length=50, default='none')
+	cvv = models.CharField(max_length=50)
+	card = models.CharField(max_length=50, null=True)
+	months = (
+    ('January', 'January'),
+    ('February', 'February'),
+    ('March', 'March'),
+    ('April', 'April'),
+    ('May', 'May'),
+    ('June', 'June'),
+    ('July', 'July'),
+    ('August', 'August'),
+    ('September', 'September'),
+    ('October', 'October'),
+    ('November', 'November'),
+    ('December', 'December')
     )
-	buwan = models.CharField(max_length=15, choices=month, default='month1')
-	year = (
-    ('year1', '2021'),
-    ('year2', '2022'),
-    ('year3', '2023'),
-    ('year4', '2024'),
-    ('year5', '2025')
+	Month = models.CharField(max_length=50, choices=months, default='month1')
+	years = (
+    ('2021', '2021'),
+    ('2022', '2022'),
+    ('2023', '2023'),
+    ('2024', '2024'),
+    ('2025', '2025')
     )
-	taon = models.CharField(max_length=15, choices=year, default='year1')
+	Year = models.CharField(max_length=50, choices=years, default='year1')
 	def __str__(self):
 		return self.Name
 
 class Suggestion(models.Model):
 	Gantangproduct = models.CharField(max_length=50, default='none')
 	Product_Category = models.CharField(max_length=50, default='none')
-	quantity = models.CharField(max_length=50, default='none')
+	Quantity = models.CharField(max_length=50, default='none')
 	price = models.CharField(max_length=50, default='none')
 	def __str__(self):
 		return self.Gantangproduct

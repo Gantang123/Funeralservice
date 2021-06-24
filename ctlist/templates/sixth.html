@@ -69,7 +69,7 @@ a:link, a:visited {
 <center>
     <div class="container">
     <h1 style="color:white">Welcome to Funiverse Plan and Services</h1>
-    <h3 style="color:white">Send Flowers</h3>
+    <h3 style="color:white">Payment center</h3>
           <script>
 function startTime() {
   var today = new Date();
@@ -95,13 +95,14 @@ function checkTime(i) {
 <hr>
 </center>
 <ul>
-  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
-  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
-  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
-  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
-  <li style="float:center"><a href="seventh.html" type="submit" class="registerbtn">Other services</a></li>
+   <li style="float:center"><a href="home" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="Traditional" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="Direct" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="Flower" type="submit" class="registerbtn">Send Flowers</a></li>
+    <li style="float:center"><a href="CRUD" type="submit" class="registerbtn">Other services</a></li>
 </ul>
-    <form>
+    <form id="privtelabel" method="POST" action="Submit">
+    {% csrf_token %}
   <h3 style="color:white">Billing form</h3>
   <p style="color:white">Name:
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -117,67 +118,64 @@ function checkTime(i) {
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    Zip code:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <input type="text" id="zip" name="zip" required/></p>
+   <input type="text" id="zipp" name="zipp" required/></p>
   <p style="color:white">Contact Number:
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
     <input type="text" id="Number2" name="Number2" required/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  Please select your sex:&nbsp;
-    <input type="radio" id="male" name="sex" value="male1">
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="sex" value="female1">
-    <label for="female">Female</label></p></p>
+ <p style="color:white">Sex:
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="Sex" name="Sex" required/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</br>
   <label for="payment"style="color:white">Select your payment</br>availability:
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
   <select name="payment" id="payment">
-    <option value="Annual" id="pay1" name="Annual">Annual</option>
-    <option value="Semi-Annual" id="pay2" name="Semi-Annual">Semi-Annual</option>
-    <option value="Quarterly" id="pay3" name="Quarterly">Quarterly</option>
-    <option value="Monthly" id="pay4" name="Monthly">Monthly</option>
+    <option value="Annual" id="Annual" name="Annual">Annual</option>
+    <option value="Semi-Annual" id="Semi-Annual" name="Semi-Annual">Semi-Annual</option>
+    <option value="Quarterly" id="Quarterly" name="Quarterly">Quarterly</option>
+    <option value="Monthly" id="Monthly" name="Monthly">Monthly</option>
   </select></br></br>
   <label for="mode"style="color:white">Mode of Payment:
   &nbsp;&nbsp;&nbsp;</label>
   <select name="mode" id="mode">
-    <option value="Savings accounts" id="card1" name="atm1">Savings accounts</option>
-    <option value="Checking accounts" id="card2" name="atm2">Checking accounts.</option>
-    <option value="Salary account" id="card3" name="atm3">Salary account.</option>
-    <option value="Walk-in" id="card4" name="atm4">Walk-in</option>
+    <option value="Savings accounts" id="Savings accounts" name="atm1">Savings accounts</option>
+    <option value="Checking accounts" id="Checking accounts" name="atm2">Checking accounts.</option>
+    <option value="Salary account" id="Salary accounts" name="atm3">Salary account.</option>
+    <option value="Walk-in" id="Walk in" name="atm4">Walk-in</option>
   </select>
 <p style="color:white">CVV:
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="text" id="Name" name="Name" placeholder="XXXX" required/>
+  <input type="text" id="cvv" name="cvv" placeholder="XXXX" required/>
 <p style="color:white">Card Number:
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <input type="text" id="Name" name="Name" placeholder="XXXX-XXXX-XXXX-XXXX" required/>
+  <input type="text" id="card" name="card" placeholder="XXXX-XXXX-XXXX-XXXX" required/>
 <p style="color:white">Expiration Date:</p>
-<form>
   <label for="Month"></label>
   <select name="Month" id="Month">
-    <option value="January" id="month1" name="January">January</option>
-    <option value="February" id="month2" name="February">February</option>
-    <option value="March" id="month3" name="March">March</option>
-    <option value="April" id="month4" name="April">April</option>
-    <option value="May" id="month5" name="May">May</option>
-    <option value="June" id="month6" name="June">June</option>
-    <option value="July" id="month7" name="July">July</option>
-    <option value="August" id="month8" name="August">August</option>
-    <option value="September" id="month9" name="September">September</option>
-    <option value="October" id="month10" name="October">October</option>
-    <option value="November" id="month11" name="November">November</option>
-    <option value="December" id="month12" name="December">December</option>
+    <option value="January" id="January" name="January">January</option>
+    <option value="February" id="February" name="February">February</option>
+    <option value="March" id="March" name="March">March</option>
+    <option value="April" id="April" name="April">April</option>
+    <option value="May" id="May" name="May">May</option>
+    <option value="June" id="June" name="June">June</option>
+    <option value="July" id="July" name="July">July</option>
+    <option value="August" id="August" name="August">August</option>
+    <option value="September" id="September" name="September">September</option>
+    <option value="October" id="October" name="October">October</option>
+    <option value="November" id="November" name="November">November</option>
+    <option value="December" id="December" name="December">December</option>
   </select>
   <label for="Year"></label>
   <select name="Year" id="Year">
-    <option value="2021" id="year1" name="2021">2021</option>
-    <option value="2022" id="year2" name="2022">2022</option>
-    <option value="2023" id="year3" name="2023">2023</option>
-    <option value="2024" id="year4" name="2024">2024</option>
-    <option value="2025" id="year5" name="2025">2025</option>
+    <option value="2021" id="2021" name="2021">2021</option>
+    <option value="2022" id="2022" name="2022">2022</option>
+    <option value="2023" id="2023" name="2023">2023</option>
+    <option value="2024" id="2024" name="2024">2024</option>
+    <option value="2025" id="2025" name="2025">2025</option>
   </select>
-</form>
             <p style="color:white">Need Help: Contact Us @ 09150472988</p>
             <center>
-            <a href="" onclick="myFunction()" class="registerbtn" style="color:black">Submit and save</a>
+            <input type="submit" class="registerbtn" style="color:black"></input>
             <script>
               function myFunction() {
                 var txt;

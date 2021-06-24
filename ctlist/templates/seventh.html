@@ -127,13 +127,14 @@ function checkTime(i) {
 <hr>
 </center>
 <ul>
-  <li style="float:center"><a href="second.html" type="submit" class="registerbtn">Home</a></li> 
-  <li style="float:center"><a href="third.html" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
-  <li style="float:center"><a href="fourth.html" type="submit" class="registerbtn">Direct Cremation</a></li>
-  <li style="float:center"><a href="fifth.html" type="submit" class="registerbtn">Send Flowers</a></li>
-  <li style="float:center"><a href="seventh.html" type="submit" class="registerbtn">Other services</a></li>
+   <li style="float:center"><a href="home" type="submit" class="registerbtn">Home</a></li> 
+  <li style="float:center"><a href="Traditional" type="submit" class="registerbtn">Traditional Funeral Services</a></li>
+  <li style="float:center"><a href="Direct" type="submit" class="registerbtn">Direct Cremation</a></li>
+  <li style="float:center"><a href="Flower" type="submit" class="registerbtn">Send Flowers</a></li>
+    <li style="float:center"><a href="CRUD" type="submit" class="registerbtn">Other services</a></li>
 </ul></br>
-<form id="asd" action="">
+ <form id="privtelabel" method="POST" action="Other">
+    {% csrf_token %}
 <p style="color:white"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -178,14 +179,13 @@ Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
   <div class="desc" style="color:#e44e4e">Pantheon de Dasmarinas (P6500)</div>
 </div></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
 <center>
-    <form>
     <table>
         <tr>
             <td>
                 <label  style="color:white" for="Gantangproduct" >Service code:</label>
             </td>
             <td>
-                <input id="Gantangproduct" name="product" type="text" size="28" required/>
+                <input id="Gantangproduct" name="Gantangproduct" type="text" size="28" />
             </td>
         </tr>
         <tr>
@@ -193,7 +193,7 @@ Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
                 <label  style="color:white" for="product">Date:</label>
             </td>
             <td>
-                <input id="Product_Category" name="product" type="text" size="28" placeholder="Month-Day-Year" required/>
+                <input id="Product_Category" name="Product_Category" type="text" size="28" placeholder="Month-Day-Year" />
             </td>
         </tr>
         <tr>
@@ -201,7 +201,7 @@ Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
                 <label  style="color:white" for="quantity">Quantity:</label>
             </td>
             <td>
-                <input id="quantity" name="quantity" width="196px" required/>
+                <input id="quantity" name="quantity" width="196px" />
             </td>
         </tr>
         <tr>
@@ -209,13 +209,12 @@ Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
                 <label  style="color:white" for="price">Price:</label>
             </td>
             <td>
-                <input id="price" name="price" size="28" required/>
+                <input id="price" name="price" size="28" />
             </td>
         </tr>
     </table>
     <input type="reset" name="reset" id="resetbtn" class="resetbtn" value="Reset the order" />
     <input type="button" id="btnAddProduct" onclick="AddProduct();" value="Add more to cart" >
-</form>
 <br>
 <p id="Web"></p> <br/>
 <h2 style="color:white"> Your Cart </h2>
@@ -375,7 +374,7 @@ Jeep Rental</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
 </script>
 </center></br>
 <center>
-  <a href="sixth.html" type="submit" class="registerbtn" style="color:black">Proceed to payment center</a>
+  <input type="submit" class="registerbtn" style="color:black" value="Proceed to payment center"></input>
 </center>
 </form>
 </body>
