@@ -13,7 +13,7 @@ urlpatterns = [
 	path('Other', views.Suggestion, name="Other"),
 	path('CRUD', views.Starling, name="CRUD"),
 	path('isip', views.Bura, name="isip"),
-	path('delete/<int:int', views.Deletes)
+	path('delete/<int:id>', views.Deletes)
 
 	# path('third.html', views.Details, name="third.html"),
 	# path('sixth.html', views.Suggestion, name="sixth.html"),
